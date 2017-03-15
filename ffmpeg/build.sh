@@ -2,6 +2,7 @@
 
 ROOT=$(pwd)
 PLATFORM=$1
+FFMPEG_TAG="n3.2.4"
 
 PLATFORM_DIR="$ROOT/platform/$PLATFORM"
 SRC_DIR="$ROOT/src"
@@ -16,8 +17,7 @@ if ! [ -d "$SRC_DIR/ffmpeg" ]; then
     cd "$SRC_DIR"
     git clone https://git.ffmpeg.org/ffmpeg.git
     cd ffmpeg
-    git checkout n3.2.2
-    git checkout -b 3.2.2
+    git checkout $FFMPEG_TAG -b $FFMPEG_TAG
 fi
 
 cd "$SRC_DIR/ffmpeg"
